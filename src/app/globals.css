@@ -196,7 +196,29 @@
   animation: slide-up 0.8s ease-out 1s both;
 }
 
+.animate-slide-up-delay-6 {
+  animation: slide-up 0.8s ease-out 1.2s both;
+}
+
+.animate-slide-up-delay-7 {
+  animation: slide-up 0.8s ease-out 1.4s both;
+}
+
 .animate-gradient {
   background-size: 400% 400%;
   animation: gradient-shift 8s ease infinite;
+}
+
+/* Enhanced Blue Theme Animations */
+@keyframes blue-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+  }
+}
+
+.animate-blue-glow {
+  animation: blue-glow 3s ease-in-out infinite;
 }
