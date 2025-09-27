@@ -492,37 +492,97 @@ export default function Home() {
               </span>
             </h3>
 
-            <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
-              <CardHeader>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
+            <div className="grid md:grid-cols-3 gap-8">
+              {/* WhatsApp Web Scraper */}
+              <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
                     <div className="w-12 h-12 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center">
                       <div className="w-6 h-6 bg-green-500 rounded-lg"></div>
                     </div>
-                    <div>
-                      <CardTitle className="text-xl text-white">WhatsApp Web Scraper</CardTitle>
-                      <CardDescription className="text-gray-400">Chrome Extension</CardDescription>
-                    </div>
+                    <Badge className="bg-gray-800 text-gray-200 border border-gray-600 text-xs">
+                      700+ Users
+                    </Badge>
                   </div>
-                  <Badge className="bg-gray-800 text-gray-200 border border-gray-600">
-                    700+ Monthly Users
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-300 mb-6 leading-relaxed">
-                  A popular Chrome extension for WhatsApp Web automation with 700+ monthly active users.
-                  Features automated messaging, contact management, and data extraction capabilities.
-                </p>
-                <Button
-                  className="bg-white text-black hover:bg-gray-200 transition-all duration-200 font-medium"
-                  onClick={() => window.open("https://chromewebstore.google.com/detail/whatsapp-web-scraper-by-e/nnadhjhpoikcfafehhdcejbekbodnjjc", "_blank")}
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View on Chrome Store
-                </Button>
-              </CardContent>
-            </Card>
+                  <CardTitle className="text-lg text-white">WhatsApp Web Scraper</CardTitle>
+                  <CardDescription className="text-gray-400">Chrome Extension</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                    Chrome extension for WhatsApp Web automation with 700+ monthly active users.
+                    Features automated messaging and contact management.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="w-full bg-white text-black hover:bg-gray-200 transition-all duration-200 font-medium"
+                    onClick={() => window.open("https://chromewebstore.google.com/detail/whatsapp-web-scraper-by-e/nnadhjhpoikcfafehhdcejbekbodnjjc", "_blank")}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Chrome Store
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Cursor for N8N: Flowzen */}
+              <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-blue-500 rounded-lg"></div>
+                    </div>
+                    <Badge className="bg-gray-800 text-gray-200 border border-gray-600 text-xs">
+                      MCP Experiment
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg text-white">Cursor for N8N: Flowzen</CardTitle>
+                  <CardDescription className="text-gray-400">AI Workflow Builder</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                    A hobby project exploring MCP (Model Context Protocol) integration with N8N workflows.
+                    Built to experiment with AI-powered automation design.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="w-full bg-white text-black hover:bg-gray-200 transition-all duration-200 font-medium"
+                    onClick={() => window.open("https://n8n-automations-ai.lovable.app/", "_blank")}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Try Demo
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* Wander with Zeynep */}
+              <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-purple-500 rounded-lg"></div>
+                    </div>
+                    <Badge className="bg-gray-800 text-gray-200 border border-gray-600 text-xs">
+                      Personal Gift
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg text-white">Wander with Zeynep</CardTitle>
+                  <CardDescription className="text-gray-400">AI Travel Planner</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                    AI-powered itinerary generator for personalized trips. A birthday gift project
+                    for my girlfriend featuring intelligent travel planning and recommendations.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="w-full bg-white text-black hover:bg-gray-200 transition-all duration-200 font-medium"
+                    onClick={() => window.open("https://www.wanderwithzeynep.com/", "_blank")}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    Plan Trip
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </section>
 
