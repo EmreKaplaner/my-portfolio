@@ -10,14 +10,26 @@ import Script from "next/script";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
+    // Device detection
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkDevice();
     window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('resize', checkDevice);
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      window.removeEventListener('resize', checkDevice);
+    };
   }, []);
 
   return (
@@ -63,36 +75,70 @@ export default function Home() {
               Co-founder of industry-leading companies revolutionizing AI automation, lead generation, and data scraping technologies
             </p>
 
-            {/* Contact Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-slide-up-delay-2 px-4">
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
-              >
-                <Mail className="h-4 w-4" />
-                <span className="sm:inline">Contact</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
-              >
-                <Linkedin className="h-4 w-4" />
-                <span className="sm:inline">LinkedIn</span>
-              </Button>
-              <Button
-                variant="outline"
-                size="sm"
-                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
-              >
-                <Github className="h-4 w-4" />
-                <span className="sm:inline">GitHub</span>
-              </Button>
-            </div>
+            {/* Contact Buttons - Responsive Design */}
+            {isMobile ? (
+              // Mobile: Stack vertically
+              <div className="flex flex-col items-center justify-center gap-3 mb-8 animate-slide-up-delay-2 px-4">
+                <Button
+                  variant="outline"
+                  size="default"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                  onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
+                >
+                  <Mail className="h-4 w-4" />
+                  <span className="font-medium">Contact</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="default"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                  onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
+                >
+                  <Linkedin className="h-4 w-4" />
+                  <span className="font-medium">LinkedIn</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="default"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                  onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
+                >
+                  <Github className="h-4 w-4" />
+                  <span className="font-medium">GitHub</span>
+                </Button>
+              </div>
+            ) : (
+              // Desktop: Show horizontally
+              <div className="flex flex-row items-center justify-center gap-8 mb-12 animate-slide-up-delay-2 max-w-4xl mx-auto px-4">
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
+                >
+                  <Mail className="h-5 w-5" />
+                  <span className="font-medium">Contact</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
+                >
+                  <Linkedin className="h-5 w-5" />
+                  <span className="font-medium">LinkedIn</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
+                >
+                  <Github className="h-5 w-5" />
+                  <span className="font-medium">GitHub</span>
+                </Button>
+              </div>
+            )}
 
             {/* Professional Stats */}
             <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto animate-slide-up-delay-3 px-4">

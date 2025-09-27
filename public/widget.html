@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ESO Automations AI Chat</title>
+</head>
+<body>
+
+<vapi-widget
+  public-key="f30cb21c-dd0f-4e65-86c2-2808ff36b0b3"
+  assistant-id="92a5d6fd-c9c2-4ee6-978d-1d901b340e1b"
+  mode="chat"
+  theme="dark"
+  base-bg-color="#000000"
+  accent-color="#14B8A6"
+  cta-button-color="#000000"
+  cta-button-text-color="#ffffff"
+  border-radius="large"
+  size="medium"
+  position="bottom-right"
+  title="Talk with ESO Automations AI"
+  start-button-text="Start"
+  end-button-text="End Call"
+  chat-first-message="Hey, this is Emre from ESO Automations. How can I help you today?"
+  chat-placeholder="Type your message..."
+  voice-show-transcript="true"
+  consent-required="true"
+  consent-title="Terms and conditions"
+  consent-content="By clicking "Agree," and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+  consent-storage-key="vapi_widget_consent"
+></vapi-widget>
+
+<style>
+  /* Base responsive styling */
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  }
+
+  /* Responsive widget container */
+  .vapi-widget-wrapper {
+    position: fixed !important;
+    z-index: 10000 !important;
+  }
+
+  /* Desktop optimizations */
+  @media (min-width: 768px) {
+    .vapi-widget-wrapper {
+      max-width: 400px !important;
+      max-height: 600px !important;
+      bottom: 20px !important;
+      right: 20px !important;
+    }
+
+    /* Ensure chat window doesn't take full screen on desktop */
+    .vapi-widget-wrapper > div {
+      max-width: 400px !important;
+      max-height: 600px !important;
+      width: 400px !important;
+      height: auto !important;
+    }
+  }
+
+  /* Mobile optimizations */
+  @media (max-width: 767px) {
+    .vapi-widget-wrapper {
+      bottom: 10px !important;
+      right: 10px !important;
+      left: 10px !important;
+      max-width: calc(100vw - 20px) !important;
+      max-height: calc(100vh - 20px) !important;
+    }
+
+    /* Allow more space on mobile */
+    .vapi-widget-wrapper > div {
+      max-width: 100% !important;
+      max-height: calc(100vh - 40px) !important;
+      width: 100% !important;
+    }
+  }
+
+  /* Replace Vapi launcher icon with eso.jpg */
+  .vapi-widget-wrapper .hover\:scale-105 svg { display: none !important; }
+  .vapi-widget-wrapper .hover\:scale-105 .flex.items-center.space-x-2::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('eso.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  /* Replace expanded header icon with eso.jpg */
+  .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3 svg { display: none !important; }
+  .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url('eso.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+
+  /* Smooth transitions */
+  .vapi-widget-wrapper * {
+    transition: all 0.3s ease !important;
+  }
+
+  /* Ensure proper scrolling in chat */
+  .vapi-widget-wrapper .overflow-y-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better button styling */
+  .vapi-widget-wrapper button {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+</style>
+
+<script src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js" async type="text/javascript"></script>
+
+</body>
+</html>
