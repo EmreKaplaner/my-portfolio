@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Linkedin, Mail, Sparkles, Code, Brain, Zap, Users, TrendingUp, Globe, MessageCircle, Phone, Star } from "lucide-react";
+import { ExternalLink, Github, Linkedin, Mail, Sparkles, Code, Brain, Zap, Users, TrendingUp, Globe, MessageCircle, Star } from "lucide-react";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
               <CardTitle className="text-4xl text-blue-900 mb-3 font-bold">ESO Automations</CardTitle>
               <CardDescription className="text-xl text-blue-700 font-medium">
-                "Your Front Desk Is Losing You $50,000/Month In Missed Implants"
+                &ldquo;Your Front Desk Is Losing You $50,000/Month In Missed Implants&rdquo;
               </CardDescription>
               <p className="text-lg text-blue-600 mt-2">
                 Complete Lead Generation + Voice AI System: From Meta Ads to PMS Bookings
@@ -298,7 +298,7 @@ export default function Home() {
                 </div>
                 <CardTitle className="text-3xl text-blue-900 mb-2 font-bold">LeadLake</CardTitle>
                 <CardDescription className="text-xl text-blue-700 font-medium">
-                  "Scrape. Enrich. Personalize. Pay Once. Use Forever."
+                  &ldquo;Scrape. Enrich. Personalize. Pay Once. Use Forever.&rdquo;
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -398,7 +398,7 @@ export default function Home() {
                 </div>
                 <CardTitle className="text-3xl text-blue-900 mb-2 font-bold">ScrapeHub</CardTitle>
                 <CardDescription className="text-xl text-blue-700 font-medium">
-                  "The Ultimate Data Scraping Platform"
+                  &ldquo;The Ultimate Data Scraping Platform&rdquo;
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -535,7 +535,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-20 pt-8 border-t border-blue-200/50 text-center animate-slide-up-delay-7">
           <div className="mb-6">
-            <h4 className="text-xl font-semibold text-blue-900 mb-4">Let's Connect</h4>
+            <h4 className="text-xl font-semibold text-blue-900 mb-4">Let&apos;s Connect</h4>
             <div className="flex items-center justify-center gap-6">
               <Button
                 variant="ghost"
