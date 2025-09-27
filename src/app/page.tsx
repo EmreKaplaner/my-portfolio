@@ -44,81 +44,81 @@ export default function Home() {
         }}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
+      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-6xl">
         {/* Header Section */}
-        <header className="text-center mb-20">
-          <div className="mb-8">
-            <div className="inline-block px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg mb-8 animate-fade-in">
-              <span className="text-gray-300 text-sm font-medium">Available for opportunities</span>
+        <header className="text-center mb-12 sm:mb-20">
+          <div className="mb-6 sm:mb-8">
+            <div className="inline-block px-3 sm:px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg mb-6 sm:mb-8 animate-fade-in">
+              <span className="text-gray-300 text-xs sm:text-sm font-medium">Available for opportunities</span>
             </div>
-            <h1 className="text-6xl font-bold mb-6 animate-slide-up tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-slide-up tracking-tight px-2">
               <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
                 Emre Kaplaner
               </span>
             </h1>
-            <p className="text-2xl text-gray-300 mb-6 animate-slide-up-delay-1 font-light">
+            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 animate-slide-up-delay-1 font-light px-2">
               Full-Stack Developer & AI Systems Engineer
             </p>
-            <p className="text-lg text-gray-400 mb-12 animate-slide-up-delay-1 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 animate-slide-up-delay-1 max-w-3xl mx-auto leading-relaxed px-4">
               Co-founder of industry-leading companies revolutionizing AI automation, lead generation, and data scraping technologies
             </p>
 
             {/* Contact Buttons */}
-            <div className="flex items-center justify-center gap-4 mb-12 animate-slide-up-delay-2">
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mb-8 sm:mb-12 animate-slide-up-delay-2 px-4">
               <Button
                 variant="outline"
-                size="lg"
-                className="gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
                 onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
               >
                 <Mail className="h-4 w-4" />
-                Contact
+                <span className="sm:inline">Contact</span>
               </Button>
               <Button
                 variant="outline"
-                size="lg"
-                className="gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
                 onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
               >
                 <Linkedin className="h-4 w-4" />
-                LinkedIn
+                <span className="sm:inline">LinkedIn</span>
               </Button>
               <Button
                 variant="outline"
-                size="lg"
-                className="gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto gap-2 sm:gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
                 onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
               >
                 <Github className="h-4 w-4" />
-                GitHub
+                <span className="sm:inline">GitHub</span>
               </Button>
             </div>
 
             {/* Professional Stats */}
-            <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto animate-slide-up-delay-3">
+            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto animate-slide-up-delay-3 px-4">
               <div className="text-center border-r border-gray-700 last:border-r-0">
-                <div className="text-3xl font-bold text-white mb-1">25+</div>
-                <div className="text-sm text-gray-400 font-medium">Dental Clinics</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">25+</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Dental Clinics</div>
               </div>
               <div className="text-center border-r border-gray-700 last:border-r-0">
-                <div className="text-3xl font-bold text-white mb-1">3</div>
-                <div className="text-sm text-gray-400 font-medium">Companies Founded</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">3</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Companies Founded</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-1">10K+</div>
-                <div className="text-sm text-gray-400 font-medium">Platform Users</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">10K+</div>
+                <div className="text-xs sm:text-sm text-gray-400 font-medium">Platform Users</div>
               </div>
             </div>
           </div>
         </header>
 
         {/* ESO Automations - Featured Section */}
-        <section className="mb-24 animate-slide-up-delay-4">
+        <section className="mb-16 sm:mb-24 animate-slide-up-delay-4">
           <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300 overflow-hidden">
             <CardHeader className="pb-6">
-              <div className="flex items-center justify-between mb-6">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4">
                 <div className="flex items-center gap-4">
-                  <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-gray-800 border border-gray-700">
+                  <div className="relative w-12 sm:w-14 h-12 sm:h-14 rounded-xl overflow-hidden bg-gray-800 border border-gray-700">
                     <Image
                       src="/eso.jpg"
                       alt="ESO Automations Logo"
@@ -126,28 +126,28 @@ export default function Home() {
                       className="object-contain p-2"
                     />
                   </div>
-                  <Badge className="bg-gray-800 text-gray-200 border border-gray-600 px-3 py-1 font-medium">
+                  <Badge className="bg-gray-800 text-gray-200 border border-gray-600 px-3 py-1 font-medium text-xs sm:text-sm">
                     Current Position
                   </Badge>
                 </div>
               </div>
-              <CardTitle className="text-4xl text-white mb-3 font-bold tracking-tight">ESO Automations</CardTitle>
-              <CardDescription className="text-xl text-gray-300 font-medium">
+              <CardTitle className="text-2xl sm:text-3xl lg:text-4xl text-white mb-3 font-bold tracking-tight">ESO Automations</CardTitle>
+              <CardDescription className="text-lg sm:text-xl text-gray-300 font-medium">
                 Voice AI & Lead Generation Platform for Dental Practices
               </CardDescription>
-              <p className="text-gray-400 mt-3 text-lg">
+              <p className="text-gray-400 mt-3 text-base sm:text-lg">
                 Complete lead generation with Voice AI systems: From Meta Ads to PMS bookings
               </p>
             </CardHeader>
-            <CardContent className="space-y-8">
+            <CardContent className="space-y-6 sm:space-y-8">
               {/* Key Value Proposition */}
-              <div className="bg-gray-800/50 border border-gray-700 p-8 rounded-xl">
-                <h3 className="text-2xl font-bold text-white mb-6">Platform Overview</h3>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              <div className="bg-gray-800/50 border border-gray-700 p-4 sm:p-6 lg:p-8 rounded-xl">
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-4 sm:mb-6">Platform Overview</h3>
+                <p className="text-gray-300 text-base sm:text-lg leading-relaxed mb-6 sm:mb-8">
                   As Co-Founder & Developer, I lead AI systems development for ESO Automations. Our platform provides
                   automated lead generation with Voice AI that delivers 60% conversion rates and 17x ROAS for dental practices.
                 </p>
-                <div className="grid md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
                   <div className="text-center">
                     <div className="text-4xl font-bold text-white mb-2">340%</div>
                     <div className="text-sm text-gray-400 font-medium">Higher Lead Conversion</div>
@@ -225,16 +225,16 @@ export default function Home() {
 
         {/* Projects Section */}
         <section className="animate-slide-up-delay-5">
-          <h2 className="text-5xl font-bold mb-6 text-center">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-center px-4">
             <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent tracking-tight">
               Featured Projects
             </span>
           </h2>
-          <p className="text-center text-gray-400 text-xl mb-20 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-center text-gray-400 text-base sm:text-lg lg:text-xl mb-12 sm:mb-20 max-w-3xl mx-auto leading-relaxed px-4">
             Innovative platforms revolutionizing lead generation, data scraping, and business automation
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
             {/* LeadLake */}
             <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300 overflow-hidden">
               <CardHeader className="pb-6">
@@ -457,14 +457,14 @@ export default function Home() {
           </div>
 
           {/* Side Projects Section */}
-          <div className="mt-24 animate-slide-up-delay-6">
-            <h3 className="text-4xl font-bold mb-12 text-center">
+          <div className="mt-16 sm:mt-24 animate-slide-up-delay-6">
+            <h3 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center px-4">
               <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent tracking-tight">
                 Side Projects
               </span>
             </h3>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
               {/* WhatsApp Web Scraper */}
               <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
                 <CardHeader>
@@ -589,40 +589,40 @@ export default function Home() {
         </section>
 
         {/* Footer */}
-        <footer className="mt-24 pt-12 border-t border-gray-700 text-center animate-slide-up-delay-7">
-          <div className="mb-8">
-            <h4 className="text-2xl font-semibold text-white mb-6">Contact Information</h4>
-            <div className="flex items-center justify-center gap-8 flex-wrap">
+        <footer className="mt-16 sm:mt-24 pt-8 sm:pt-12 border-t border-gray-700 text-center animate-slide-up-delay-7">
+          <div className="mb-6 sm:mb-8">
+            <h4 className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6 px-4">Contact Information</h4>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 px-4">
               <Button
                 variant="ghost"
-                size="lg"
-                className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200 text-sm"
                 onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
               >
-                <Mail className="h-4 w-4 mr-3" />
-                emrekaplaneer@gmail.com
+                <Mail className="h-4 w-4 mr-2 sm:mr-3" />
+                <span className="truncate">emrekaplaneer@gmail.com</span>
               </Button>
               <Button
                 variant="ghost"
-                size="lg"
-                className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200 text-sm"
                 onClick={() => window.open("mailto:emre@leadlake.co", "_blank")}
               >
-                <Mail className="h-4 w-4 mr-3" />
-                emre@leadlake.co
+                <Mail className="h-4 w-4 mr-2 sm:mr-3" />
+                <span className="truncate">emre@leadlake.co</span>
               </Button>
               <Button
                 variant="ghost"
-                size="lg"
-                className="text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200"
+                size="sm"
+                className="w-full sm:w-auto text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200 text-sm"
                 onClick={() => window.open("mailto:info@esoautomations.com", "_blank")}
               >
-                <Mail className="h-4 w-4 mr-3" />
-                info@esoautomations.com
+                <Mail className="h-4 w-4 mr-2 sm:mr-3" />
+                <span className="truncate">info@esoautomations.com</span>
               </Button>
             </div>
           </div>
-          <p className="text-gray-500 text-lg">
+          <p className="text-gray-500 text-sm sm:text-base lg:text-lg px-4">
             © 2024 Emre Kaplaner. Built with Next.js and deployed on Cloudflare Pages.
           </p>
         </footer>
