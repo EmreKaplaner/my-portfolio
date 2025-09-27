@@ -17,9 +17,9 @@ export default function Home() {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
-    // Device detection
+    // Device detection - improved for tablets and large phones
     const checkDevice = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkDevice();
@@ -56,103 +56,97 @@ export default function Home() {
         }}></div>
       </div>
 
-      <div className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-12 max-w-6xl">
+      <div className="relative z-10 container mx-auto px-6 sm:px-8 py-12 sm:py-16 max-w-7xl">
         {/* Header Section */}
-        <header className="text-center mb-12 sm:mb-20">
-          <div className="mb-6 sm:mb-8">
-            <div className="inline-block px-3 sm:px-4 py-2 bg-gray-800/50 border border-gray-700 rounded-lg mb-6 sm:mb-8 animate-fade-in">
-              <span className="text-gray-300 text-xs sm:text-sm font-medium">Available for opportunities</span>
+        <header className="text-center mb-16 sm:mb-24">
+          <div className="mb-8 sm:mb-12">
+            <div className="inline-block px-4 sm:px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg mb-8 sm:mb-12 animate-fade-in">
+              <span className="text-gray-300 text-sm sm:text-base font-medium">Available for opportunities</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 animate-slide-up tracking-tight px-2">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 animate-slide-up tracking-tight px-2">
               <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
                 Emre Kaplaner
               </span>
             </h1>
-            <p className="text-lg sm:text-xl lg:text-2xl text-gray-300 mb-4 sm:mb-6 animate-slide-up-delay-1 font-light px-2">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-6 sm:mb-8 animate-slide-up-delay-1 font-light px-2">
               Full-Stack Developer & AI Systems Engineer
             </p>
-            <p className="text-base sm:text-lg text-gray-400 mb-8 sm:mb-12 animate-slide-up-delay-1 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-lg sm:text-xl text-gray-400 mb-12 sm:mb-16 animate-slide-up-delay-1 max-w-4xl mx-auto leading-relaxed px-4">
               Co-founder of industry-leading companies revolutionizing AI automation, lead generation, and data scraping technologies
             </p>
 
             {/* Contact Buttons - Responsive Design */}
             {isMobile ? (
-              // Mobile: Stack vertically
-              <div className="flex flex-col items-center justify-center gap-3 mb-8 animate-slide-up-delay-2 px-4">
+              // Mobile: Stack vertically with better spacing
+              <div className="flex flex-col items-center justify-center gap-4 mb-12 animate-slide-up-delay-2 px-6 max-w-sm mx-auto">
                 <Button
                   variant="outline"
-                  size="default"
-                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                  onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
-                >
-                  <Mail className="h-4 w-4" />
-                  <span className="font-medium">Contact</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="default"
-                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                  onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
-                >
-                  <Linkedin className="h-4 w-4" />
-                  <span className="font-medium">LinkedIn</span>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="default"
-                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200"
-                  onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
-                >
-                  <Github className="h-4 w-4" />
-                  <span className="font-medium">GitHub</span>
-                </Button>
-              </div>
-            ) : (
-              // Desktop: Show horizontally
-              <div className="flex flex-row items-center justify-center gap-8 mb-12 animate-slide-up-delay-2 max-w-4xl mx-auto px-4">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 py-4 text-base font-medium h-12"
                   onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
                 >
                   <Mail className="h-5 w-5" />
-                  <span className="font-medium">Contact</span>
+                  <span>Contact</span>
                 </Button>
                 <Button
                   variant="outline"
-                  size="lg"
-                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 py-4 text-base font-medium h-12"
                   onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
                 >
                   <Linkedin className="h-5 w-5" />
-                  <span className="font-medium">LinkedIn</span>
+                  <span>LinkedIn</span>
                 </Button>
                 <Button
                   variant="outline"
-                  size="lg"
-                  className="px-8 py-3 gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-200 text-base"
+                  className="w-full gap-3 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 py-4 text-base font-medium h-12"
                   onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
                 >
                   <Github className="h-5 w-5" />
-                  <span className="font-medium">GitHub</span>
+                  <span>GitHub</span>
+                </Button>
+              </div>
+            ) : (
+              // Desktop: Show horizontally with larger buttons
+              <div className="flex flex-row items-center justify-center gap-12 mb-16 animate-slide-up-delay-2 max-w-5xl mx-auto px-4">
+                <Button
+                  variant="outline"
+                  className="px-12 py-4 gap-4 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 text-lg font-medium min-w-[160px] h-14 hover:scale-105"
+                  onClick={() => window.open("mailto:emrekaplaneer@gmail.com", "_blank")}
+                >
+                  <Mail className="h-6 w-6" />
+                  <span>Contact</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="px-12 py-4 gap-4 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 text-lg font-medium min-w-[160px] h-14 hover:scale-105"
+                  onClick={() => window.open("https://www.linkedin.com/in/emre-kaplaner-7b3a3b15b/", "_blank")}
+                >
+                  <Linkedin className="h-6 w-6" />
+                  <span>LinkedIn</span>
+                </Button>
+                <Button
+                  variant="outline"
+                  className="px-12 py-4 gap-4 bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:border-gray-500 transition-all duration-300 text-lg font-medium min-w-[160px] h-14 hover:scale-105"
+                  onClick={() => window.open("https://github.com/EmreKaplaner", "_blank")}
+                >
+                  <Github className="h-6 w-6" />
+                  <span>GitHub</span>
                 </Button>
               </div>
             )}
 
             {/* Professional Stats */}
-            <div className="grid grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto animate-slide-up-delay-3 px-4">
-              <div className="text-center border-r border-gray-700 last:border-r-0">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">25+</div>
-                <div className="text-xs sm:text-sm text-gray-400 font-medium">Dental Clinics</div>
+            <div className="grid grid-cols-3 gap-6 sm:gap-12 max-w-3xl mx-auto animate-slide-up-delay-3 px-4">
+              <div className="text-center border-r border-gray-700 last:border-r-0 py-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">25+</div>
+                <div className="text-sm sm:text-base text-gray-400 font-medium">Dental Clinics</div>
               </div>
-              <div className="text-center border-r border-gray-700 last:border-r-0">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">3</div>
-                <div className="text-xs sm:text-sm text-gray-400 font-medium">Companies Founded</div>
+              <div className="text-center border-r border-gray-700 last:border-r-0 py-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">3</div>
+                <div className="text-sm sm:text-base text-gray-400 font-medium">Companies Founded</div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">10K+</div>
-                <div className="text-xs sm:text-sm text-gray-400 font-medium">Platform Users</div>
+              <div className="text-center py-4">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-2">10K+</div>
+                <div className="text-sm sm:text-base text-gray-400 font-medium">Platform Users</div>
               </div>
             </div>
           </div>
