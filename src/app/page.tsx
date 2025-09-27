@@ -464,7 +464,7 @@ export default function Home() {
               </span>
             </h3>
 
-            <div className="grid md:grid-cols-3 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {/* WhatsApp Web Scraper */}
               <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
                 <CardHeader>
@@ -551,6 +551,36 @@ export default function Home() {
                   >
                     <ExternalLink className="h-4 w-4 mr-2" />
                     Plan Trip
+                  </Button>
+                </CardContent>
+              </Card>
+
+              {/* extractorGPT */}
+              <Card className="border border-gray-700 bg-gray-900/50 backdrop-blur-sm hover:bg-gray-900/70 transition-all duration-300">
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center">
+                      <div className="w-6 h-6 bg-orange-500 rounded-lg"></div>
+                    </div>
+                    <Badge className="bg-gray-800 text-gray-200 border border-gray-600 text-xs">
+                      Open Source
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg text-white">extractorGPT</CardTitle>
+                  <CardDescription className="text-gray-400">Intelligent Web Scraper</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-300 mb-6 leading-relaxed text-sm">
+                    Intelligence scraper with smart selection engine that rotates through different selectors.
+                    Adapts automatically to all websites for reliable data extraction.
+                  </p>
+                  <Button
+                    size="sm"
+                    className="w-full bg-white text-black hover:bg-gray-200 transition-all duration-200 font-medium"
+                    onClick={() => window.open("https://github.com/EmreKaplaner/extractorGPT", "_blank")}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View Code
                   </Button>
                 </CardContent>
               </Card>
