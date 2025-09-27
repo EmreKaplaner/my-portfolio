@@ -225,8 +225,8 @@ export default function Home() {
                 <div className="bg-gray-800/30 border border-gray-700 p-6 rounded-xl">
                   <h4 className="text-xl font-bold text-white mb-4">Service Impact</h4>
                   <ul className="space-y-3 text-gray-300">
-                    <li>1,247+ Patients Booked Monthly</li>
-                    <li>$8.2M+ in Booked Value</li>
+                    <li>500+ Patients Booked Monthly</li>
+                    <li>$5M+ in Monthly Value</li>
                     <li>10-Second Lead Response Time</li>
                     <li>Direct PMS Integration</li>
                   </ul>
