@@ -10,6 +10,7 @@ import Script from "next/script";
 
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isVapiLoaded, setIsVapiLoaded] = useState(false);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -18,6 +19,33 @@ export default function Home() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
+  useEffect(() => {
+    // Ensure Vapi widget loads properly
+    const loadVapiWidget = () => {
+      if (typeof window !== 'undefined') {
+        // Load Vapi script if not already loaded
+        if (!document.querySelector('script[src*="vapi-ai"]')) {
+          const script = document.createElement('script');
+          script.src = 'https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js';
+          script.async = true;
+          script.onload = () => {
+            setIsVapiLoaded(true);
+            // Force widget to reinitialize
+            setTimeout(() => {
+              const event = new Event('vapiWidgetLoad');
+              window.dispatchEvent(event);
+            }, 100);
+          };
+          document.head.appendChild(script);
+        } else {
+          setIsVapiLoaded(true);
+        }
+      }
+    };
+
+    loadVapiWidget();
   }, []);
 
   return (
@@ -538,72 +566,89 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* Vapi AI Widget */}
-      <div
-        dangerouslySetInnerHTML={{
-          __html: `
-            <vapi-widget
-              public-key="f30cb21c-dd0f-4e65-86c2-2808ff36b0b3"
-              assistant-id="92a5d6fd-c9c2-4ee6-978d-1d901b340e1b"
-              mode="chat"
-              theme="dark"
-              base-bg-color="#000000"
-              accent-color="#14B8A6"
-              cta-button-color="#000000"
-              cta-button-text-color="#ffffff"
-              border-radius="large"
-              size="full"
-              position="bottom-right"
-              title="Talk with ESO Automations AI"
-              start-button-text="Start"
-              end-button-text="End Call"
-              chat-first-message="Hey, this is Emre from ESO Automations. How can I help you today?"
-              chat-placeholder="Type your message..."
-              voice-show-transcript="true"
-              consent-required="true"
-              consent-title="Terms and conditions"
-              consent-content="By clicking &quot;Agree,&quot; and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
-              consent-storage-key="vapi_widget_consent"
-            ></vapi-widget>
+      {/* Vapi AI Widget - Fixed positioning */}
+      {isVapiLoaded && (
+        <div
+          className="fixed bottom-4 right-4 z-50"
+          dangerouslySetInnerHTML={{
+            __html: `
+              <vapi-widget
+                public-key="f30cb21c-dd0f-4e65-86c2-2808ff36b0b3"
+                assistant-id="92a5d6fd-c9c2-4ee6-978d-1d901b340e1b"
+                mode="chat"
+                theme="dark"
+                base-bg-color="#000000"
+                accent-color="#14B8A6"
+                cta-button-color="#000000"
+                cta-button-text-color="#ffffff"
+                border-radius="large"
+                size="full"
+                position="bottom-right"
+                title="Talk with ESO Automations AI"
+                start-button-text="Start"
+                end-button-text="End Call"
+                chat-first-message="Hey, this is Emre from ESO Automations. How can I help you today?"
+                chat-placeholder="Type your message..."
+                voice-show-transcript="true"
+                consent-required="true"
+                consent-title="Terms and conditions"
+                consent-content="By clicking 'Agree,' and each time I interact with this AI agent, I consent to the recording, storage, and sharing of my communications with third-party service providers, and as otherwise described in our Terms of Service."
+                consent-storage-key="vapi_widget_consent"
+              ></vapi-widget>
+            `
+          }}
+        />
+      )}
 
-            <style>
-              /* Replace Vapi launcher icon with ESO logo */
-              .vapi-widget-wrapper .hover\\:scale-105 svg { display: none !important; }
-              .vapi-widget-wrapper .hover\\:scale-105 .flex.items-center.space-x-2::before {
-                content: "";
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                background-image: url('/eso.jpg');
-                background-size: cover;
-                background-position: center;
-                border-radius: 50%;
-                margin-right: 8px;
-              }
-              /* Replace expanded header icon with ESO logo */
-              .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3 svg { display: none !important; }
-              .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3::before {
-                content: "";
-                display: inline-block;
-                width: 24px;
-                height: 24px;
-                background-image: url('/eso.jpg');
-                background-size: cover;
-                background-position: center;
-                border-radius: 50%;
-                margin-right: 8px;
-              }
-            </style>
-          `
-        }}
-      />
+      {/* Global Vapi Widget Styles */}
+      <style jsx global>{`
+        /* Ensure widget stays visible and properly positioned */
+        .vapi-widget-wrapper {
+          position: fixed !important;
+          bottom: 20px !important;
+          right: 20px !important;
+          z-index: 9999 !important;
+          pointer-events: auto !important;
+        }
 
-      {/* Vapi Widget Script */}
-      <Script
-        src="https://unpkg.com/@vapi-ai/client-sdk-react/dist/embed/widget.umd.js"
-        strategy="lazyOnload"
-        async
-      />
+        /* Replace Vapi launcher icon with ESO logo */
+        .vapi-widget-wrapper .hover\\:scale-105 svg {
+          display: none !important;
+        }
+        .vapi-widget-wrapper .hover\\:scale-105 .flex.items-center.space-x-2::before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: url('/eso.jpg');
+          background-size: cover;
+          background-position: center;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+
+        /* Replace expanded header icon with ESO logo */
+        .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3 svg {
+          display: none !important;
+        }
+        .vapi-widget-wrapper .p-4 .flex.items-center.space-x-3::before {
+          content: "";
+          display: inline-block;
+          width: 24px;
+          height: 24px;
+          background-image: url('/eso.jpg');
+          background-size: cover;
+          background-position: center;
+          border-radius: 50%;
+          margin-right: 8px;
+        }
+
+        /* Ensure widget is always visible */
+        .vapi-widget-wrapper * {
+          visibility: visible !important;
+          opacity: 1 !important;
+        }
+      `}</style>
     </div>
   );
 }
